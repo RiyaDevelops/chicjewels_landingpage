@@ -94,6 +94,7 @@ height:100%;
 /* navbar styling  */
 .navbar{
     /* background-color: lightcoral; */
+    justify-content: center;
 }
 
 .navbar .nav__link{
@@ -102,12 +103,13 @@ height:100%;
     font-size: 1rem;
     font-weight: var(--font-weight-regular);
     text-transform: uppercase;
-    margin:10px;
+    margin-left:10px;
     /* color will be affected by transition */
     transition: color 0.3s ease-in-out;
     text-align: center;
     justify-content: center;
     align-items: center;
+    /* border: 2px red solid; */
 }
 
 .nav__link:hover{
@@ -119,11 +121,15 @@ height:100%;
 
 .nav__link::after{
     content: " / ";
-    margin-left: 40px;
+    margin-left: 20px;
+    /* border: 2px solid green; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .nav__link:last-child::after{
-    content:" ";
+    content:none;
     margin-left: 0;
 }
 
@@ -184,9 +190,15 @@ height:100%;
     /* margin-right: 15px; */
 }
 
+.header-cta__border span{
+  margin-left: 7px;
+}
+
 .header-cta__border i[class^="fa"]{
   font-size: 1.3rem;
-  margin-right:0.3rem;
+  /* margin-right:0.9rem; */
+  text-align: center;
+  justify-content: center;
 }
 
 
@@ -206,7 +218,7 @@ height:100%;
 .header-cta__bag i[class^="fa"]{
     color:#EB4928;
     background-color: white;
-    font-size: 1.3rem;
+    font-size: 1.6rem;
     border-radius: 50%;
     padding:0.5rem;
     /* margin: 0px 10px; */
@@ -673,7 +685,8 @@ height:100%;
   border:2px solid green;
   align-items: center; /* Center items horizontally */
   text-align: center; /* Center text content */
-  padding:1.2rem;
+  /* padding:1.2rem; */
+  border-radius: 20px;
 }
 
 
@@ -685,8 +698,15 @@ height:100%;
   text-align: center;
   align-items: center;
   display: block;
+    border-radius: 20px;
   /* border-radius: 20px; */
+  /* transition: var(--transition); */
 }
+
+/* .product__img img{
+  transition: var(--transition);
+
+} */
 
 
 .product__title{
@@ -854,37 +874,72 @@ height:100%;
   }
 
 }
-/* <section class="about-us">
-<div class="container">
-     <!-- image -->
-    <div class="about-us__img">
-    <img src="../img/about-us-image.jpeg" alt="" >
-   </div>
-     <!-- image  -->
-    <!-- about-us text -->
-   <div class="about-us__text">
-    <h2 class="heading"> about us </h2>
-    <p class="about-us__description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, laborum doloremque.
-         Omnis repellat, soluta mollitia commodi, rem maxime aperiam quia autem minima, incidunt 
-         amet iure maiores libero sapiente. Tempora dignissimos dolores quo, nobis ut doloremque quam aliquid qui aliquam. Sunt.
-    </p>
-    <p class="about-us__description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, laborum doloremque.
-         Omnis repellat, soluta mollitia commodi, rem maxime aperiam quia autem minima, incidunt 
-         amet iure maiores libero sapiente. Tempora dignissimos dolores quo, nobis ut doloremque quam aliquid qui aliquam. Sunt.
-    </p>
-   </div>
-   <!-- about-us text ends-->
-        <a href="#" class="btn">
-            Read More
-        </a>
-    <!-- btn ends -->
+
+
+/* ======================== BEST SELLER ===================== */
+
+.best-seller .container{
+  background-color: #EB4928;
+  padding:2rem;
+}
+
+
+.best-seller .heading{
+  text-align: left;
+  /* margin-top:2rem; */
+  /* border: 2px green solid; */
+  padding:0.4rem;
+  /* margin:2rem; */
+}
+
+.best-seller__icons{
+  display: flex;
+  justify-content: end;
+  flex: row;
+  gap:20px;
+}
+
+.best-seller__icons i[class^="fa"]{
+  font-size: 1.7rem;
+  /* position: fixed; */
+}
+
+.best-seller__images{
+  display: flex;
+  flex-direction: row;
+  gap:0.6rem;
+  
+}
+
+.seller__img {
+ width:300px;
+ height: 300px;
+ border-radius: 20px;
+}
+
+
+
+/* <section class="best-seller">
+    <div class="container">
+        <h2 class="heading">
+            Best Sellers
+        </h2>
+         <div class="best-seller__icons">
+            <i class="fa-solid fa-circle-arrow-left"></i>
+            <i class="fa-solid fa-circle-arrow-right"></i>
+
+
+         </div>
+        <div class="best-seller__images">
+            <img src="../img/product2.png" alt="" class="product__img">
+            <img src="../img/product4.png" alt="" class="product__img">
+            <img src="../img/product7.png" alt="" class="product__img">
+            <img src="../img/product7.png" alt="" class="product__img">
+            <img src="../img/product2.png" alt="" class="product__img">
+        </div>
     </div>
-</section> */
-
-
-
+</section>
+ */
 
 
 
