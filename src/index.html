@@ -28,6 +28,14 @@
     <!-- stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reset.css">
+    <!-- favicon -->
+    <link rel="icon" href="../img/logo-img.png" type="image/x-icon">
+
+    <!-- In the <head> -->
+<link rel="stylesheet" href="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css" />
+<script src="https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js"></script>
+
+<!-- End of <body> -->
 </head>
 <body>
     <!-- =============== HEADER: BEGINS ===================== --->
@@ -39,34 +47,35 @@
         <i class="fa-solid fa-bars"></i>
        </div>
        <!-- menu ends  -->
-      <!-- logo -->
-      <a href="/" class="logo">Chic Jewels</a>
+     
+      <!-- logo and logo image -->
+      <a href="/" class="logo">
+        <div class="logo__img">
+            <img src="../img/logo-img.png" alt="carbon neatural stamp">
+        </div>
+        Chic Jewels
+       </a>
       <!-- navigation begins  -->
       <nav class="navbar">
-        <a href="#" class="nav__link "> Home
+        <a href="#home" class="nav__link "> Home
             <i class="fa-solid fa-caret-right"></i>
-            <div class="horizontal-line">
-            </div>
+            
          </a>
-        <a href="#" class="nav__link">  Gold Jewelry
+        <a href="#gold-jewelry" class="nav__link">  Gold Jewelry
             <i class="fa-solid fa-caret-right"></i>
-            <div class="horizontal-line">
-            </div>
+            
         </a>
-        <a href="#" class="nav__link"> Silver Jewelry
+        <a href="#silver-jewelry" class="nav__link"> Silver Jewelry
             <i class="fa-solid fa-caret-right"></i>
-            <div class="horizontal-line">
-            </div>
+           
         </a>
-        <a href="#" class="nav__link"> Best Sellers
+        <a href="#best-sellers" class="nav__link"> Best Sellers
             <i class="fa-solid fa-caret-right"></i>
-            <div class="horizontal-line">
-            </div> 
+           
         </a>
-        <a href="#" class="nav__link"> About Us 
+        <a href="#about-us" class="nav__link"> About Us 
             <i class="fa-solid fa-caret-right"></i>
-            <div class="horizontal-line">
-            </div>
+            
         </a>
       </nav>
      <!-- navigation ends -->
@@ -97,7 +106,8 @@
      <!-- =============== HEADER : ENDS ===================== --->
 
     <!--========================= MAIN :BEGINS===========================  -->
-    <main>
+    <main id="home">
+
      <!-- =========== HERO SECTION: BEGINS =================-->
     <section class="hero">
         <div class="container">
@@ -107,8 +117,8 @@
 
             </h1>
              <p class="hero-text__description">
-                Discover our handpicked collection of trendy jewelry ! 
-                Affordable, stylish, and totally unique, each piece adds a touch of chic glamour to your everyday look 
+                Discover our handpicked collection of trendy jewelry. 
+                Affordable, stylish, and totally unique, each piece adds a touch of chic glamour to your everyday look !
              </p>
              <div class="hero-cta__btns">
              <a class="btn btn-shop">
@@ -132,20 +142,20 @@
             
          <div class="hero-images">
             <div class="img-color">
-            <img src="../img/hero-sectionimg.webp" alt="hero section image">
+            <img src="../img/download.jpeg" alt="hero section image 1">
         </div>
 
         <div class="img-color">
-            <img src="../img/hero-section__img(3).png" alt="hero section image" id="img-two">
+            <img src="../img/hero-img(2).jpeg" alt="hero section image" id="img-two">
         </div>
 
         <div class="img-color" id="asd">
             <img src="../img/hero-section__img(5).png" alt="hero section image">
         </div>
-
-            <div class="img-color">
+ 
+             <div class="img-color">
             <img src="../img/hero-section__img(2).png" alt="hero section image">
-         </div>
+         </div> 
 
             <!-- right section ends here -->
        </div>
@@ -154,36 +164,10 @@
 
 
     </section>
-    <!--============== HERO SECTION: ENDS ===========-->
+    <!--==================== HERO SECTION: ENDS =======================-->
 
-    <!--=============== CTA SECTION : BEGINS ============ -->
-        <!-- <section class="cta">
-            <div class="container">
-                <img class="cta__img" src="../img/products_promo_img.jpeg " alt="flower image for call-to-action banner">
-                <div class="banner">
-                    <h3 class="banner__cta--one">
-                        Buy 2 Items, <br>  <span class = "cta--bold">Get 20% off</span> 
-                    </h3>
-
-                    <h2 class="banner__cta--two">
-                        Annual Spring <br>Sale 
-                    </h2>
-
-                    <h3 class="banner__cta--three">
-                        Buy 3+ Items, <br>  <span class = "cta--bold">Get 25% off</span> 
-                    </h3>
-
-                    <div class="banner__cta-btn">
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-    <!--=============== CTA SECTION : ENDS ============ -->
-
-
-    <!-- =================== GOLD JEWELRY ============================== -->
-    <section class="gold-jewelry">
+    <!-- =================== GOLD JEWELRY: BEGINS ============================== -->
+    <section class="jewelry gold-jewelry" id="gold-jewelry">
         <div class="container">
             <div class="promo-img">
                 <img src="../img/products_promo_img.jpeg" alt="">
@@ -194,24 +178,25 @@
             <h2 class="heading"> 
                 Gold Jewelry
              </h2>
-             <!-- grid begins here -->
-              <div class="jewelry-grid">
+        <!-- grid begins here -->
+        <div class="jewelry-grid">
 
                 <!-- product begins here  -->
                 <div class="product">
                 <img src="../img/gold-hoops.png" alt="" class="product__img">
-                <h3 class="product__title"> Everyday Gold Hoop Earrings </h3>
+                <h3 class="product__title"> On-the go Hoops </h3>
                 <p class="product__description"> 
-                     Elevate your style with this trendy gold pendant. 
+                    Embrace your inner glow with these staple gold hoops              
                 </p>
 
                 <div class="product-price">
-                 <a href="#" class="product-cta">
-                    Buy Now
+                <p class="product__price-amount">
+                        $24.99
+                    </p>
+                 <a href="#" class=" btn product-cta">
+                   In my Bag
                  </a>
-                 <p class="product__price-amount">
-                    $24.99
-                </p>
+                
                 </div>
                 <!-- product price ends here -->
 
@@ -220,76 +205,83 @@
 
                    <!-- product begins here  -->
                 <div class="product">
-                    <img src="../img/gold-hoops.png" alt="" class="product__img">
-                    <h3 class="product__title"> Everyday Gold Hoop Earrings </h3>
+                    <img src="../img/product4.png" alt="" class="product__img">
+                    <h3 class="product__title"> Mermaid Pearl Hoops  </h3>
                     <p class="product__description"> 
-                        Elevate your style with this trendy gold pendant. 
+                        Dive into enchanting elegance with these mini mermaid-inspired pearl hoops              
                     </p>
                     <div class="product-price">
-                        <a href="#" class="product-cta">
-                           Buy Now
-                        </a>
                         <p class="product__price-amount">
-                           $24.99
-                       </p>
-                       </div>
+                                $32.99
+                            </p>
+                         <a href="#" class=" btn product-cta">
+                           In my Bag
+                         </a>
+                        
+                        </div>
+                        <!-- product price ends here -->
+                    </div>
+                     <!-- product ends here  -->
+
+
+                      <!-- child element of grid -->
+                <div class="product">
+                    <img src="../img/product6.png" alt="" class="product__img">
+                    <h3 class="product__title"> Gold Letter Necklace </h3>
+                    <p class="product__description"> 
+                        Personalize your style with this charming letter necklace             
+                    </p>
+                    <div class="product-price">
+                        <p class="product__price-amount">
+                                $45.00
+                            </p>
+                         <a href="#" class=" btn product-cta">
+                           In my Bag
+                         </a>
+                        
+                        </div>
+                        <!-- product price ends here -->
                     </div>
                      <!-- product ends here  -->
 
 
                        <!-- product begins here  -->
                 <div class="product">
-                    <img src="../img/gold-hoops.png" alt="" class="product__img">
-                    <h3 class="product__title"> Everyday Gold Hoop Earrings </h3>
+                    <img src="../img/hero-section__img(3).png" alt="" class="product__img">
+                    <h3 class="product__title">  Gold Heart Earrings </h3>
                     <p class="product__description"> 
-                        Elevate your style with this trendy gold pendant.            
-                    </p>
-                    <div class="product-price">
-                        <a href="#" class="product-cta">
-                           Buy Now
-                        </a>
+                        Embrace your romantic side with these exquisite heart-shaped earrings              
+                     </p>
+                     <div class="product-price">
                         <p class="product__price-amount">
-                           $24.99
-                       </p>
-                       </div>
+                                $24.99
+                            </p>
+                         <a href="#" class=" btn product-cta">
+                           In my Bag
+                         </a>
+                        
+                        </div>
+                        <!-- product price ends here -->
                     </div>
                      <!-- product ends here  -->
 
 
                        <!-- product begins here  -->
                 <div class="product">
-                    <img src="../img/gold-hoops.png" alt="" class="product__img">
-                    <h3 class="product__title"> Everyday Gold Hoop Earrings </h3>
+                    <img src="../img/product--ring.png" alt="" class="product__img">
+                    <h3 class="product__title"> Gilded Statement Ring </h3>
                     <p class="product__description"> 
-                        Elevate your style with this trendy gold pendant.            
-                    </p>
-                    <div class="product-price">
-                        <a href="#" class="product-cta">
-                           Buy Now
-                        </a>
-                        <p class="product__price-amount">
-                           $24.99
-                       </p>
-                       </div>
-                    </div>
-                     <!-- product ends here  -->
-
-
-                       <!-- product begins here  -->
-                <div class="product">
-                    <img src="../img/gold-hoops.png" alt="" class="product__img">
-                    <h3 class="product__title"> Everyday Gold Hoop Earrings </h3>
-                    <p class="product__description"> 
-                        Elevate your style with this trendy gold pendant.            
-                    </p>
-                    <div class="product-price">
-                        <a href="#" class="product-cta">
-                           Buy Now
-                        </a>
-                        <p class="product__price-amount">
-                           $24.99
-                       </p>
-                       </div>
+                        Make a statement of opulence with this luxurious gold ring
+                        <div class="product-price">
+                            <p class="product__price-amount">
+                                    $22.00
+                                </p>
+                             <a href="#" class=" btn product-cta">
+                               In my Bag
+                             </a>
+                            
+                            </div>
+                            <!-- product price ends here -->
                     </div>
                      <!-- product ends here  -->
 
@@ -297,27 +289,26 @@
 
                        <!-- product begins here  -->
                 <div class="product">
-                    <img src="../img/gold-hoops.png" alt="" class="product__img">
-                    <h3 class="product__title"> Everyday Gold Hoop Earrings </h3>
+                    <img src="../img/product__necklace--gold.png" alt="" class="product__img">
+                    <h3 class="product__title"> Beaded Gold Necklace </h3>
                     <p class="product__description"> 
-                        Elevate your style with this trendy gold pendant.            
+                        Elevate your style with this trendy gold beaded pendant            
                     </p>
                     <div class="product-price">
-                        <a href="#" class="product-cta">
-                           Buy Now 
-                        </a>
                         <p class="product__price-amount">
-                           $24.99
-                       </p>
-                       </div>
+                                $35.99
+                            </p>
+                         <a href="#" class=" btn product-cta">
+                           In my Bag
+                         </a>
+                        
+                        </div>
+                        <!-- product price ends here -->
                     </div>
                      <!-- product ends here  -->
             
               </div>
               <!-- grid ends here -->
-              <div class="promo-img">
-                <img src="../img/jewlery-des__img.jpeg" alt="">
-            </div>
         </div>
           <!-- <img class="img-box__description" src="../img/jewlery-des__img.jpeg" alt=""> -->
          
@@ -326,54 +317,35 @@
 
 
  <!-- =================== SILVER JEWELRY ============================== -->
- <section class="gold-jewelry">
+ <section class="jewelry silver-jewelry" id="silver-jewelry">
     <div class="container">
-        <div class="img-box">
-            <!-- <img src="../img/products_promo_img.jpeg" alt=""> -->
-    </div>
+        <div class="promo-img">
+            <img src="../img/jewlery-des__img.jpeg" alt="">
+        </div>
         <h2 class="heading"> 
         Silver Jewelry
          </h2>
          <!-- grid begins here -->
           <div class="jewelry-grid">
 
-            <!-- product begins here  -->
-            <div class="product">
-            <img src="../img/product3.png" alt="" class="product__img">
-            <h3 class="product__title"> Everyday Gold Hoop Earrings 18k</h3>
-            <p class="product__description"> 
-                 Elevate your style with this trendy gold pendant.            
-            </p>
-
-            <div class="product-price">
-             <a href="#" class="product-cta">
-                Buy Now
-             </a>
-             <p class="product__price-amount">
-                45.99
-            </p>
-            </div>
-            <!-- product price ends here -->
-
-             </div>
-             <!-- product ends here  -->
-
                <!-- product begins here  -->
             <div class="product">
-                <img src="../img/product3.png" alt="" class="product__img">
-                <h3 class="product__title"> Everyday Gold Hoop Earrings </h3>
+                <img src="../img/hero-section__img(5).png" alt="" class="product__img">
+                <h3 class="product__title"> Everyday Silver Hoops </h3>
                 <p class="product__description"> 
-                    Elevate your style with this trendy gold pendant. 
-                    Its intricate design adds a touch of elegance, perfect for any occasion              
+                    Embrace your inner glow with these staple silver hoops
+ 
                 </p>
                 <div class="product-price">
-                    <a href="#" class="product-cta">
-                       Buy Now
-                    </a>
                     <p class="product__price-amount">
-                       $24.99
-                   </p>
-                   </div>
+                            $22.00
+                        </p>
+                     <a href="#" class=" btn product-cta">
+                       In my Bag
+                     </a>
+                    
+                    </div>
+                    <!-- product price ends here -->
                 </div>
                  <!-- product ends here  -->
 
@@ -381,59 +353,82 @@
                    <!-- product begins here  -->
             <div class="product">
                 <img src="../img/product3.png" alt="" class="product__img">
-                <h3 class="product__title"> Everyday Gold Hoop Earrings </h3>
+                <h3 class="product__title"> Crystal Ball </h3>
                 <p class="product__description"> 
-                    This trendy gold pendant features intricate filigree detailing, 
-                    making it the perfect accessory for any occasion.                
+                    Embrace celestial elegance with these captivating crystal ball earrings
                 </p>
                 <div class="product-price">
-                    <a href="#" class="product-cta">
-                       Buy Now
-                    </a>
                     <p class="product__price-amount">
-                       $24.99
-                   </p>
-                   </div>
+                            $24.99
+                        </p>
+                     <a href="#" class=" btn product-cta">
+                       In my Bag
+                     </a>
+                    
+                    </div>
+                <!-- product price ends here -->
+    
+                 </div>
+                 <!-- product ends here  -->
+
+                   <!-- product begins here  -->
+            <div class="product">
+                <img src="../img/silver-jewlery--one.png" alt="" class="product__img">
+                <h3 class="product__title"> Silver Letter Necklace </h3>
+                <p class="product__description"> 
+                    Personalize your style with this charming letter necklace                        
+                </p>
+                <div class="product-price">
+                    <p class="product__price-amount">
+                            $29.99
+                        </p>
+                     <a href="#" class=" btn product-cta">
+                       In my Bag
+                     </a>
+                    
+                    </div>
+                    <!-- product price ends here -->
                 </div>
                  <!-- product ends here  -->
 
 
                    <!-- product begins here  -->
             <div class="product">
-                <img src="../img/product3.png" alt="" class="product__img">
-                <h3 class="product__title"> Everyday Gold Hoop Earrings </h3>
+                <img src="../img/silver-jewlery--four.png" alt="" class="product__img">
+                <h3 class="product__title">  Silver Heart Earrings </h3>
                 <p class="product__description"> 
-                    This trendy gold pendant features intricate filigree detailing, 
-                    making it the perfect accessory for any occasion.                
+                    Embrace your romantic side with these exquisite heart-shaped earrings                       
                 </p>
                 <div class="product-price">
-                    <a href="#" class="product-cta">
-                       Buy Now
-                    </a>
                     <p class="product__price-amount">
-                       $24.99
-                   </p>
-                   </div>
+                            $24.99
+                        </p>
+                     <a href="#" class=" btn product-cta">
+                       In my Bag
+                     </a>
+                    
+                    </div>
                 </div>
                  <!-- product ends here  -->
 
 
                    <!-- product begins here  -->
             <div class="product">
-                <img src="../img/product3.png" alt="" class="product__img">
-                <h3 class="product__title"> Everyday Gold Hoop Earrings </h3>
+                <img src="../img/silver-jewlery--two.png" alt="" class="product__img">
+                <h3 class="product__title"> Chunky Ring </h3>
                 <p class="product__description"> 
-                    This trendy gold pendant features intricate filigree detailing, 
-                    making it the perfect accessory for any occasion.                
+                Make a statement with this chic, stylish & bold chunky ring 
                 </p>
                 <div class="product-price">
-                    <a href="#" class="product-cta">
-                       Buy Now
-                    </a>
                     <p class="product__price-amount">
-                       $24.99
-                   </p>
-                   </div>
+                            $24.99
+                        </p>
+                     <a href="#" class=" btn product-cta">
+                       In my Bag
+                     </a>
+                    
+                    </div>
+                    <!-- product price ends here -->
                 </div>
                  <!-- product ends here  -->
 
@@ -441,20 +436,21 @@
 
                    <!-- product begins here  -->
             <div class="product">
-                <img src="../img/product3.png" alt="" class="product__img">
-                <h3 class="product__title"> Everyday Gold Hoop Earrings </h3>
+                <img src="../img/silver-jewlery--three.png" alt="" class="product__img">
+                <h3 class="product__title">  Beaded Silver Necklace</h3>
                 <p class="product__description"> 
-                    This trendy gold pendant features intricate filigree detailing, 
-                    making it the perfect accessory for any occasion.                
+                Elevate your style with this trendy silver beaded pendant                        
                 </p>
                 <div class="product-price">
-                    <a href="#" class="product-cta">
-                       Buy Now 
-                    </a>
                     <p class="product__price-amount">
-                       $24.99
-                   </p>
-                   </div>
+                            $22.99
+                        </p>
+                     <a href="#" class=" btn product-cta">
+                       In my Bag
+                     </a>
+                    
+                    </div>
+                    <!-- product price ends here -->
                 </div>
                  <!-- product ends here  -->
         
@@ -468,43 +464,75 @@
 <!-- =================== SILVER JEWELRY ============================== -->
 
 
-<!-- ===================== PARTNERS BEGIN ================== -->
-<section class="partners">
-    <div class="container">
-
-    </div>
-</section>
-
-<!-- ===================== PARTNERS END ================== -->
-
 <!-- =====================BEST SELLERS ================ -->
-<section class="best-seller">
+<section class="best-seller" id="best-sellers">
     <div class="container">
+        <div class="header best-seller__header">
         <h2 class="heading">
             Best Sellers
-        </h2>
-        
-        <!-- <div class="best-seller__icons">
-            <i class="fa-solid fa-circle-arrow-left"></i>
-            <i class="fa-solid fa-circle-arrow-right"></i>
-         </div>
-          -->
-        <div class="best-seller__images">
-            <img src="../img/product2.png" alt="" class="seller__img">
-            <img src="../img/product4.png" alt="" class="seller__img">
-            <img src="../img/product7.png" alt="" class="seller__img">
-            <img src="../img/product7.png" alt="" class="seller__img">
-            <img src="../img/product7.png" alt="" class="seller__img">
-            <img src="../img/product7.png" alt="" class="seller__img">
+        </h2>  
 
-            <!-- <img src="../img/product2.png" alt="" class="seller__img"> -->
+        <div class="carousel__icons  best-seller__icons">
+            <i class="fa-solid fa-circle-arrow-left" id="prev-arrow"></i>
+            <i class="fa-solid fa-circle-arrow-right" id="next-arrow"></i>
+          </div>
+
         </div>
-    </div>
+        <!-- best seller header ends here -->
+
+        <!-- ALLY CAROUSEL -->
+    <ul class="slider">   
+         <div class="slider__img">
+            <li>
+            <img src="../img/product2.png" alt="On-the Go Gold Hoops" class="seller__img">
+            <span> On-the Go Hoops<span>
+            </li>
+        </div>
+
+        <div class="slider__img">
+            <li>
+            <img src="../img/product__necklace--gold.png" alt=" Beaded Gold Chic Necklace " class="seller__img">
+            <span> Beaded Gold  Necklace <span>
+            </li>
+        </div>
+
+        <div class="slider__img">
+            <li>
+            <img src="../img/silver-jewlery--one.png" alt=" silver Letter necklace" class="seller__img">
+            <span> silver Letter necklace<span>
+            </li>
+        </div>
+
+        <div class="slider__img">
+            <li>
+            <img src="../img/silver-jewlery--four.png" alt=" Heart Errings" class="seller__img">
+            <span> heart Earrings<span>
+            </li>
+        </div>
+
+        <div class="slider__img">
+            <li>
+            <img src="../img/product4.png" alt=" pearl hoops" class="seller__img">
+            <span>mermaid pearl hoops<span>
+            </li>
+        </div>
+
+        <div class="slider__img">
+            <li>
+            <img src="../img/product6.png" alt=" gold letter necklace " class="seller__img">
+            <span> Gold Letter Necklace<span>
+            </li>
+        </div>  
+        </ul>
+        <!-- slider ends here -->
+   
+</div>
+<!-- container -->
 </section>
 <!-- ===================== BEST SELLERS =================== -->
     
   <!-- =================== ABOUT US: BEGINS ============================== -->
-  <section class="about-us">
+  <section class="about-us" id="about-us">
     <div class="container">
          <!-- image -->
         <div class="about-us__img">
@@ -540,33 +568,258 @@
     </section>
 <!-- =================== ABOUT US: ENDS ============================== -->
 
+<!-- ========================= TESTIMONIALS ================== -->
+  <section class="testimonials">
+    <div class="container">
+        <div class="header">
+            <h2 class="heading testimonial__header">
+                40,000 FIVE STAR REVIEWS
+            </h2>  
+    
+            <div class="testimonial__icons">
+                <i class="fa-solid fa-circle-arrow-left"></i>
+                <i class="fa-solid fa-circle-arrow-right"></i>
+              </div>
+    
+            </div>
+            <!-- testimonial header ends here -->
+
+            <div class="testimonial__wrapper">
+                  
+                <div class="testimonial__box"> 
+                    <div class="company-star-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="company-review__content">
+                        They have certainly earned my trust and loyalty, and I cannot wait to shop with them again!"
+                    </p>
+                     <div class="reviewer__box">
+                    <h4 class="reviewer-name">
+                        Jenny S.
+                    </h4>
+                    <i class="fa-solid fa-square-check"></i>
+                </div>
+                <!-- reviewer box -->
+                </div>
+                <!-- testimonial box ends here -->
+           
 
 
+            
+                <div class="testimonial__box">
+                    <div class="company-star-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="company-review__content">
+                        They have certainly earned my trust and loyalty, and I cannot wait to shop with them again!"
+                    </p>
+                     <div class="reviewer__box">
+                    <h4 class="reviewer-name">
+                        Jenny S.
+                    </h4>
+                    <i class="fa-solid fa-square-check"></i>
+                </div>
+                <!-- reviewer box -->
+                </div>
+                <!-- testimonial box ends here -->
+
+
+                <div class="testimonial__box">
+                    <div class="company-star-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="company-review__content">
+                        They have certainly earned my trust and loyalty, and I cannot wait to shop with them again!"
+                    </p>
+                     <div class="reviewer__box">
+                    <h4 class="reviewer-name">
+                        Jenny S.
+                    </h4>
+                    <i class="fa-solid fa-square-check"></i>
+                </div>
+                <!-- reviewer box -->
+                </div>
+                <!-- testimonial box ends here -->
+         
+
+           
+                <div class="testimonial__box">
+                    <div class="company-star-rating">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="company-review__content">
+                        They have certainly earned my trust and loyalty, and I cannot wait to shop with them again!"
+                    </p>
+                     <div class="reviewer__box">
+                    <h4 class="reviewer-name">
+                        Jenny S.
+                    </h4>
+                    <i class="fa-solid fa-square-check"></i>
+                </div>
+                <!-- reviewer box -->
+                </div>
+                <!-- testimonial box ends here -->
+          
+            </div>
+    </div>
+  </section>
 
 </main>
 <!-- main ends  -->
 
+<footer class="footer">
+    <div class="container">
+        <!-- newsletter -->
+        <div class="newsletter">
+            <div class="newsletter__text">
+                <h1 class="newsletter__heading heading">
+                    BE THE FIRST TO KNOW !               
+                 </h1>
+                  <p class="newsletter-message">
+                    Join the list for exclusive deals, updates, & giveaways !
+                </p>
+                    </div>
+                   
+                    <!-- form begins -->
+                    <form action="#" class="newsletter__form">
+                        <label for="email"></label>
+                        <input 
+                        type="email" 
+                        name="" 
+                        id="email" 
+                        placeholder="Enter your Email">
+                        
+                        <button class="btn" type="submit">
+                         Subscribe
+                        </button>
+                    </form>
+                </div>
+                <!-- newsletter box ends -->
+
+
+                <!-- footer content  -->
+                <div class="footer-content">
+                      <!-- main content -->
+                      <div class="col-1">
+                        
+                        <a href="#" class="footer-logo"> 
+                            Wear chic everyday of the week!
+                        </a>
+                        <p class="socials-cta">
+                         Follow us<span>@chicjewels</span> on all platforms
+                        </p>
+                        <!-- social media links -->
+                        <div class="footer-icons">
+                            <!-- <ul class="social-list"> -->
+                                <div class="socials__bg">
+                                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                                </div>
+
+                                <div class="socials__bg">
+                                 <a href="#" aria-label="Pintrest"><i class="fa-brands fa-pinterest"></i></a>
+                                </div>
+
+                                <div class="socials__bg">
+                               <a href="#" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                                </div>
+
+                                <div class="socials__bg">
+                                    <a href="#" aria-label="Twitter">  <i class="fa-brands fa-x-twitter"></i></i></a>
+                                    </div>
+      
+                            <!-- </ul> -->
+                        </div>
+                        <div class="footer__img">
+                            <img src="../img/footer__img.png" alt="carbon neatural stamp">
+                        </div>                     
+                    
+                    </div>
+                      <!-- col-1  ends here -->
+                      <!-- footer navigation begins -->
+                    <!-- <nav class="footer-nav"> -->
+                        <div class="col-2 footer-nav">
+                            <li> <a href="#" class="footer__links" id="footer__links-title"> Customer Care </a></li>
+                            <li> <a href="#" class="footer__links"> Track my order </a></li>
+                            <li> <a href="#" class="footer__links"> Returns & exchanges</a></li>
+                            <li> <a href="#" class="footer__links"> FAQs</a></li>
+                            <li> <a href="#" class="footer__links"> Wholesale Inquiries</a></li>
+                        </div>
+                        <!-- col-2 ends here -->
+
+                        <div class="col-3 footer-nav">
+                            <li> <a href="#" class="footer__links" id="footer__links-title"> Special Offers </a></li>
+                            <li> <a href="#" class="footer__links"> BOGO Rings </a></li>
+                            <li> <a href="#" class="footer__links"> Spring Sale</a></li>
+                            <li> <a href="#" class="footer__links"> Spring Rings</a></li>
+                            <li> <a href="#" class="footer__links"> BOGO Earrings</a></li>
+                           </div>
+                           <!-- col-3 ends here -->
+
+                           <div class="col-4 footer-nav">
+                            <li> <a href="#" class="footer__links" id="footer__links-title"> Legal Info</a></li>
+                            <li> <a href="#" class="footer__links"> Privacy Policy </a></li>
+                            <li> <a href="#" class="footer__links"> Terms & Conditions </a></li>
+                            <li> <a href="#" class="footer__links">  Cookie Policy</a></li>
+                            <li> <a href="#" class="footer__links">  SMS Privacy Policy</a></li>
+
+                           </ul>
+                        </div>  
+                           <div class="col-5 footer-nav">
+                            <li> <a href="#" class="footer__links" id="footer__links-title"> Contact Us</a></li>
+                            <li> <a href="#" class="footer__links"> 9AM - 7PM EST </a></li>
+                            <li> <a href="#" class="footer__links"> <i class="fa-solid fa-envelope"></i> email</a></li>
+                            <li> <a href="#" class="footer__links"> <i class="fa-solid fa-phone"></i> chat now</a></li>
+                            <li> <a href="#" class="footer__links"> <i class="fa-solid fa-phone"></i> +646-702-2890</a></li>
+                           </ul>
+                        </div>   
+                            <!-- col-4 ends here  -->
+
+
+                    <!-- </nav> -->
+                    <!-- navigation ends here -->
+                      
+                    </div>
+                    <!-- footer content ends here -->
+                     
+<div class="copyright">
+    <p> Copyright &copy; 2024 <a href="#" target="_blank"> chicjewels.com 
+        | PRIVACY POLICY
+        | AL REWARD T&C
+        | SMS PRIVACY POLICY
+       </a></p>
+    </div>
+
+</div>
+<!-- container -->
+
+</footer>
 
 
 
 
 
+<!-- End of <body> -->
+<script src="//unpkg.com/a11y-slider@latest/dist/a11y-slider.js"></script>
 
+<script src="../js/script.js"></script>
 
-
-
-
-
-    <!-- javascript -->
-    <script>
-        // hamburger variable, hamburger variable selects css element with class name menu
-        const hamburger = document.querySelector(".menu");
-        const mobileMenu = document.querySelector(".mobile");
-
-        hamburger.addEventListener('click', () => {
-            // hamburger.classlist.toggle("toggle");
-            mobileMenu.classList.toggle("navbar-open");
-        });
-    </script>
 </body>
+
+
 </html>

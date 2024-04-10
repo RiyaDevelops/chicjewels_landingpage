@@ -1,11 +1,16 @@
 :root{
 --font-family: "Poppins", sans-serif;
+/* color scheme */
 --white:#ffffff;
 --black:black;
-/* color scheme */
-/* --accent-color: */ 
-/* --text-color: */
-
+/* --accent: #EB4928; */
+/* --main:orange; */
+--main:#fbacd4;
+--verified-check:#8ed451;
+/* --accent:#04fafa; */
+/* --accent:#acd4fb; */
+/* light blue  */
+--accent:#b6acd4;
 /* text font weights  */
 --font-weight-extralight: 100;
 --font-weight-light: 200;
@@ -14,14 +19,18 @@
 --font-weight-semibold: 600;
 --font-weight-bold: 700;
 --font-weight-extrabold: 800;
+/* other */
 --transition: 0.3s ease-in-out;
-
+--shadow:0px 4px 6px rgba(0, 0, 0, 0.1); /* Example box shadow */
+--main-margin:2.5rem;
 
 }
 
 img{
     max-inline-size: 100%;
+/* This means the image will not exceed the width of its container */
     max-block-size: 100%;
+  /* This ensures that the image's height will not exceed the height of its container,  */
     display: block;
 }
 
@@ -30,12 +39,7 @@ body{
     font-size: 1.125rem;
     font-family: var(--font-family);
     color: black;
-    /* background-color: lightskyblue; */
-}
-
-/* h1,h2,h3,h4{
-    
-} */
+  }
 
 .container{
     /* background-color: blueviolet; */
@@ -46,32 +50,38 @@ body{
     margin: 0 auto;
     /* space on the edge when we minimize screen to  mobile view */
     padding: 0 1rem;
-    /* border: 2px green solid; */
 }
 
 header{
     background-color: white;
     /* header has a fixed height */
     height:100px;
-    position: sticky; 
+    position: sticky; /*  stick to a specific position on the viewport when scrolling */
     top:0; /* Fixed position from the top of the viewport */
     left: 0; /* Fixed position from the left of the viewport */
     z-index: 100; /* Ensure it's above other content */
     width:100%;
 }
 
-/* container is inside the header, .container element is a child of header */
 .header .container {
-display:flex;
-justify-content: space-between;
-align-items: center;
-/* background-color: red; */
-height:100%;
-/* border: 2px black solid; */
-/* container to tke 100% height of its parent class */
+    /* border: 2px black solid; */
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: red; */
+    height:100%;
+   /* container to tke 100% height of its parent class */
 }
 
-/* logo styling */
+/* LOGO STYLING  */
+.logo__img{
+  width:40px;
+  height:40px;
+  /* background: red; */
+  align-items: center;
+  transform: rotate(30deg); /* Adjust the degree of rotation as needed */
+
+}
 .logo{
     /* border: 2px black solid; */
     /* background-color: pink; */
@@ -79,19 +89,20 @@ height:100%;
     color: black;
     text-transform: uppercase;
     /* padding: 2px; */
-    text-align: left;   
     font-size: 1.2rem;
     font-weight: var(--font-weight-bold);
     border-radius: 20px;
     padding:0.4rem;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
 }
 
 .logo:hover{
-  color:#EB4928;
+  color:var(--accent);
 }
 
-/* navbar styling  */
+/* NAVBAR STYLING */
 .navbar{
     /* background-color: lightcoral; */
     justify-content: center;
@@ -144,29 +155,13 @@ height:100%;
     margin-right:3rem
 }
 
-.horizontal-line {
-    position: relative;
-    display: none;
-    margin: 0.6rem 0;
-
-}
-
-.horizontal-line::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 0.9px; /* Adjust thickness as needed */
-    background-color: black; /* Adjust color as needed */
-}
-
-/* =============right section of header ============ */
+ 
+/* ============ RIGHT SECTION OF HEADER ============ */
 
 .header-cta{
   /* background-color: aqua; */
   display: flex;
- justify-content: space-between;
+  justify-content: space-between;
 }
 
 .header-cta a{
@@ -175,7 +170,8 @@ height:100%;
   align-items: center; /* Align items vertically */
   margin-right: 10px; /* Adjust margin between items */
 }
-/* cta buttons */
+
+/*  CTA BUTTONS */
 .header-cta__border{
     /* border: 2px orange solid; */
     text-decoration: none;
@@ -209,10 +205,11 @@ height:100%;
 }
 
 .header-cta__bag{
-    /* background-color: black; */
+    /* background-color: white; */
     color: white;
     border-radius:4px;
     padding: 0.4rem;
+    /* box-shadow: var(--shadow); */
 }
 
 .header-cta__bag i[class^="fa"]{
@@ -239,7 +236,7 @@ height:100%;
     padding:0.1rem;
 }
 
-/* =========== Media Queries =========== */
+/* ==================================== Media Queries ================================= */
 
 /* first breaking point */
 @media screen and (max-width: 1127px) {
@@ -257,7 +254,7 @@ height:100%;
 }
 
 
-@media screen and (max-width: 1070px) {
+@media screen and (max-width: 996px) {
     .menu{
         display:block;
     }
@@ -265,20 +262,24 @@ height:100%;
     .navbar{
         position: absolute;
         top:100px;
-        width:80%;
+        width:100%;
         /* occupying viewport minus header height */
+        /* 100% of the viewport height (100vh) minus 100 pixels (100px).  */
+        /* fill the entire viewport height but leave some space at the bottom. */
         height:calc(100vh - 100px);
         right:0;
         left: 0;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        background-color:#EB4928;
+        background-color:var(--accent);
         opacity:0;
         transform: translateX(-100%);
         pointer-events: none;
         visibility: hidden;   
-        transition: var(--transition);     
+        transition: var(--transition);  
+        /* margin-bottom:8rem; */
+        padding-bottom:1rem;
     }
     
     .navbar-open .navbar {
@@ -287,6 +288,7 @@ height:100%;
         pointer-events: auto;
         visibility: visible;
         transition: all 0.4s ease-in-out;
+        
 
     }
 
@@ -297,12 +299,17 @@ height:100%;
         height: 100%;
         text-align: left;
         /* top margin 2 rem  left right bottom 0 */
-        margin: 2rem 0 0;
+        margin: 1.2rem 0 0;
         padding: 0.5rem;
-        font-size:1.3rem;
+        font-size:2rem;
         font-weight: var(--font-weight-regular);
-        font-size: 1.2rem;
-        color: #ffffff;
+        font-size: 1.8rem;
+        color:black;
+        /* border: 2px solid red; */
+        border-radius: 20px;
+        background-size: cover;
+        background-position: center; /* Center the background image */
+        align-items: right;
     }
 
     .nav__link::after{
@@ -316,9 +323,52 @@ height:100%;
     .nav__link .fa-caret-right{
         display: inline-flex;
         justify-content: flex-end;
+        color: var(--main);
+        border:none;
+        align-items: center;
+        font-size: 2rem;
     }
-     
 
+    .nav__link:nth-child(1){
+      background-image: url(../../img/product7.png);
+      background-size: cover;
+      background-position: center; /* Center the background image */
+      align-items: right;
+    }
+    .nav__link:nth-child(2){
+      background-image: url(../../img/product2.png);
+      background-size: cover;
+      background-position: center; /* Center the background image */
+      align-items: right;
+    }
+
+    .nav__link:nth-child(3){
+      background-image: url(../../img/product3.png);
+      background-size: cover;
+      background-position: center; /* Center the background image */
+      align-items: right;
+    }
+
+    .nav__link:nth-child(4){
+      background-image: url(../../img/product__necklace--gold.png);
+      background-size: cover;
+      background-position: center; /* Center the background image */
+      align-items: right;
+    }
+   
+    .nav__link:nth-child(4){
+      background-image: url(../../img/about-us-image.jpeg);
+      background-size: cover;
+      background-position: center; /* Center the background image */
+      align-items: right;
+    }
+
+    .nav__link:nth-child(5){
+      background-image: url(../../img/product--ring.png);
+      background-size: cover;
+      background-position: center; /* Center the background image */
+      align-items: right;
+    }
 }
 
 /* ===================== HERO SECTION =========================== */
@@ -331,10 +381,10 @@ height:100%;
 
   .hero .container{
     display:grid;
-    justify-content: center;
-    align-items: center;
-    /* aligns content in container to middle of screen */
+    /* layout of th grid */
     grid-template-areas: "text image";
+    /* two columns in the grid, with the first column containing the "text" area 
+    and the second column containing the "image" area. */
     grid-template-columns: 55%  auto;
   }
 
@@ -347,7 +397,7 @@ height:100%;
 
   .hero-text__title{
     color:black;
-    font-size: 4.5rem;
+    font-size: clamp(3.5rem, 4.2rem, 4.4rem);
     text-transform: capitalize;
     font-weight: var(--font-weight-light);
     /* border: 2px black solid; */
@@ -367,7 +417,9 @@ height:100%;
     text-align: left;
     max-width: 90%;
   }
-
+/* .hero-images{
+  width:100%;
+} */
   .hero-cta__btns{
     width:100%;
     margin-bottom:50px;
@@ -375,12 +427,12 @@ height:100%;
   }
 
  .btn{
-    border: 2px orange solid;
+    border: 2px #fbacd4 solid;
     border-radius: 30px;
     padding: 0.5rem 1.3rem 0.5rem 1.3rem;
     justify-content: center;
     text-align: center;
-    background-color: orange;
+    background-color: var(--main);
     color: white;
     text-transform: uppercase;
     letter-spacing: 0.28px;
@@ -425,17 +477,15 @@ height:100%;
 
   .hero-images{
     grid-area: "image";
+    /* grid-template-columns: repeat(2, 1fr); */
     box-sizing: border-box;
     /* border: 2px black solid; */
     display:grid;
-    /* row , column gap spacing  */
-    grid-gap: 1.5rem 2rem;
+    grid-gap: 0.9rem 1.7rem;
     /* HOW DO I TARGET THE ROW AP IN THE FIRST COLUMN ONLY ????? */
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, auto); /* Two rows */
     padding: 0.6rem;
-    align-items: center;
-    justify-content: center; /* Center horizontally */
+    align-items: start;
+    
   }
 
 .hero-images img {
@@ -447,10 +497,6 @@ height:100%;
   
 }
 
-.hero-images img:nth-child(2){
-    width: 9%;
-    height: 70%;
-}
   
   .img-color{
     /* width:100%;
@@ -469,6 +515,7 @@ height:100%;
 
   .img-color:nth-child(1){
     background-color: pink;
+
   }
 
   .img-color:nth-child(2){
@@ -481,34 +528,17 @@ height:100%;
 
   .img-color:nth-child(4){
     background-color: plum;
-  }
-
-
-  /* .img-color__bg:nth-child(1){
-    background-color: palevioletred;
-  }
-
-  .img-color__bg:nth-child(2){
-    background-color: pink;
-  }
-
-  .img-color__bg:nth-child(2){
-    background-color: yellow;
   } */
 
 
- 
    
   /* ===================== Media Queries ================= */
 
-  @media screen and (max-width:1042px){
-    body{
-        /* background-color: lightgreen; */
-    }
+  @media screen and (max-width:1042px) {
     
     .hero .container{
         margin-top: 20px;
-     }
+    }
 
     .hero-text{
       border: 2px solid green;
@@ -520,15 +550,29 @@ height:100%;
      }
      
     .hero-text__description{
-      max-width:100%;
+      width:100%;
      }
 
      .hero-bottom__message{
       width:100%;
       border: 2px red solid;
      }
-   
+
+     .hero-images{
+      grid-area: "image";
+      box-sizing: border-box;
+      border: 2px green solid;
+      display:grid;
+      grid-gap: 0.9rem 1.7rem;
+      /* HOW DO I TARGET THE ROW AP IN THE FIRST COLUMN ONLY ????? */
+      grid-template-columns: repeat(1, 1fr);
+      padding: 0.6rem;
+      align-items: start;
+      
+    }
   }
+  
+  
   @media screen and (max-width:949px){
    
      .hero-text__title{
@@ -536,6 +580,7 @@ height:100%;
      }
      
   }
+
 
   @media screen and (max-width:776px){
     body{
@@ -580,6 +625,7 @@ height:100%;
       margin-bottom:20px;
       /* justify-content: center; */
     }
+    
   }
 
   @media screen and (max-width:600px){
@@ -616,47 +662,40 @@ height:100%;
 
     .btn{
       margin:0.4rem;
-      border: 2px black solid;
+      /* border: 2px black solid; */
     }
 
     .hero-bottom{
       max-width: 100%;
       margin-bottom:20px;
     }
-
+  
   }
-
-  /* ======================  CTA SECTION  =============== */
-   
-/*  ========================== */
-
   
 
-/* ======================== GOLD JEWELRY ================ */
+/* ======================== GOLD JEWELRY and SILVER JEWELRY  ================ */
 
 
 .promo-img{
   width:100%;
   margin-top: 3rem;
-
 }
 
 
-.gold-jewelry{
+.jewelry{
   /* background-color: red; */
-  /* display:block; */
 }
 
 /* component */
  .heading{
-  font-size: clamp(2rem, 3rem, 3.4rem);
+  font-size: clamp(1.4rem, 3rem, 3.4rem);
   font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   /* margin-top:2.5rem; */
 
 }
 
-.gold-jewelry .heading{
+.jewelry .heading{
   text-align: center;
   justify-content: center;
   margin-bottom: 3rem;
@@ -666,88 +705,88 @@ height:100%;
 
 .jewelry-grid{
   display:grid;
-  /* background-color: yellow; */
-  /* Each column will be at least 350px wide but can expand if there is more space available. */
-  grid-gap:3rem 2rem;
-  grid-template-columns: repeat(3, 1fr); 
-  justify-items: center;
+  flex-shrink: 0;
+  /* border: 2px green solid; */
+  gap: 1.5rem;
+  /* padding-block: 2rem; */
+  /* 3 columns even spacing  */
+  grid-template-columns: repeat(3,1fr);
+  text-align: center;
 }
+
 
 .product{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  line-height: 2.5;
-  /* this is the width of the individual box inside the grd */
-  max-width: 400px;
-  min-height: 550px;
-  box-sizing: border-box;
-  border:2px solid green;
-  align-items: center; /* Center items horizontally */
-  text-align: center; /* Center text content */
-  /* padding:1.2rem; */
-  border-radius: 20px;
+ /* border: 2px solid blue; */
+ /* flex-shrink: 0; */
+ /* text-align: center; */
+ justify-content: center;
+ padding-block: 1rem;
+ justify-content: center;
+ text-align: center;
+ align-items: center;
+ /* i need to set width  */
 }
-
 
 .product__img{
-  width:350px;
-  height:350px;
+  width:300px;
+  height:300px;
   object-fit: cover;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  display: block;
-    border-radius: 20px;
-  /* border-radius: 20px; */
-  /* transition: var(--transition); */
+  border-radius: 20px;
+  /* border: 2px solid green; */
+  margin: 0 auto;
 }
 
-/* .product__img img{
-  transition: var(--transition);
-
-} */
+.product__img:hover{
+    transform: scale(0.6);
+    transition: ease-in-out 0.3s;
+  }
+  
 
 
 .product__title{
   text-transform: uppercase;
-  /* This tells the browser to use 18px as the font size, but it can vary between 16px and 20px depending on factors such as screen size and user preferences. */
-  font-size: clamp(0.7px, 1rem, 2rem);
+  font-size: clamp(0.4px, 1.2rem, 2rem);
   letter-spacing: 0.3px;
+  margin-top: 2rem;;
 }
 
 .product__description{
-  text-align: center;
   opacity:0.5;
   line-height: 1.9;
-  font-size: clamp(0.6px, 1rem, 2rem);
-  margin-bottom: 1.4rem;
+  font-size: clamp(0.5px, 1rem, 2rem);
+  margin-bottom: 0.5rem;
+  margin-top: 1.2rem;
 }
 
 .product-price{
   display:flex;
+  flex-direction: column;
   /* background-color: yellow; */
-  text-align: center;
+  text-align: start;
   justify-content: center;
   text-decoration: none;
   margin-bottom: 1rem;
   text-transform: capitalize;
 }
 
-.product-price a{
+.product-price {
   text-decoration: none;
-  color:black;
-
+   display: flex;
+   flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;  
 }
+
 /* .product-cta{
   margin-right:20px;
 } */
 
-.product-cta::after{
+/* .product-cta::after{
   content: " | ";
   margin-right: 10px;
 
-}
+} */
 .product-price a:hover{
   color: #EB4928;
   transition: var(--transition);
@@ -755,47 +794,221 @@ height:100%;
 
 }
 
+/* ================== media Queries ============= */
+@media screen and (max-width:934px) {
+  .jewelry-grid{
+    grid-template-columns: repeat(2,1fr);
+  }
+  
+}
+
+
+@media screen and (max-width:560px) {
+  .jewelry-grid{
+    grid-template-columns: repeat(1,1fr);
+  }
+  
+}
+
+
+
+/* ======================== BEST SELLER ===================== */
+
+.best-seller{
+  /* background-color: red; */
+  margin-top: 2rem;
+}
+.best-seller .container{
+  /* padding:1.5rem; */
+  /* margin-top: 2rem; */
+}
+
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* border:2px solid green; */
+  padding-top:1rem;
+  margin-bottom: 2rem;
+}
+
+.best-seller .heading{
+  text-align: center;
+  /* justify-content: center; */
+  /* margin-bottom: 1rem; */
+  /* border: 2px green solid; */
+  color:black;
+  font-size: clamp(2rem, 3rem, 3.5rem);
+  /* background: #26c653; */
+}
+
+.carousel__icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  cursor: pointer;
+  align-items: center;
+  position: relative;
+  /* border: 20px red solid; */
+  gap:3rem;
+  color:var(--accent);
+  margin-right:2rem;
+}
+
+.carousel__icons i[class^="fa"]{
+  font-size: 2rem;
+}
+
+/* slider  */
+.slider {
+  display: flex;
+  width:100%;
+}
+
+/* symbol  * selects all direct child elements of the .slider class */
+.slider > * {
+  width: 100%;
+  flex: 0 0 auto;
+  /* background-color: pink; */
+  /* border:3px orange solid;  */
+  list-style: none;
+  padding:0.4rem 0;
+  text-align: center;
+}
+
+.a11y-slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  margin: 2em 0 2em;
+  padding: 0;
+
+} 
+
+/* dots underneath image */
+.a11y-slider-dots li {
+  display: flex;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  margin: 0 6px;
+  color: #fff;
+  border: none;
+}
+
+.a11y-slider-dots li button {
+  display: block;
+  font-size: 0;
+  border: orange solid 1px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #fff;
+  transition: var(--transition);
+}
+
+.a11y-slider-dots li button.active {
+ background-color: var(--main);
+}
+
+
+.slider__img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider__img span {
+  text-transform: capitalize;
+}
+
+.slider img{
+  width:250px;
+  height:250px;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+
+/* ================== Media Queries  ======================= */
+/* 768px or wider */
+
+@media screen and (max-width: 500px){
+  .heading{
+    font-size: clamp(1rem, 1.5rem, 3rem);
+  }
+
+}
+@media (min-width: 768px) {
+  .slider > * {
+    width: 50%;
+    /* background-color: blue; */
+
+  }
+}
+
+/* viewport width is at least 960 pixels wide. 960px or wider */
+@media (min-width: 960px) {
+  .slider > * {
+    width: 33.3333%;
+    /* background-color: red; */
+  }
+
+}
+
+/* 1280 px pr wider  */
+@media (min-width: 1280px) {
+  .slider > * {
+    width: 25%;
+    /* background-color: palevioletred; */
+  }
+}
+
+
 
 
 /* ============= About-us section ===================== */
 
+
 .about-us{
   /* border: 2px solid red; */
-  margin: 2rem 0;
-  padding:1rem;
+  margin-top: 4rem;
+  /* padding:1rem; */
   /* background-color: orange; */
   opacity: 0.9;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Example box shadow */
-
+  /* background: #EB4928; */
 }
 
 .about-us .container {
   display:flex;
   justify-content: space-between;
   gap:40px;
+  /* background-color: chocolate; */
+  /* align-items: center; */
 }
 
 .about-us__img{
   /* border: 2px solid red; */
   overflow: hidden; /* Ensure the image doesn't overflow the container */
-  flex-basis: 100%;
-  border-radius: 20px;
-
+  /* border-radius: 20px; */
+  justify-content: center; 
+  display: flex;
+  margin-bottom: 1rem;
 }
 
 .about-us__img img{
-  width:100%;
-  height:auto;
+  width: 550px; 
+  /* won't grow or shrink beyond that initial size. */
+  flex: 0 0 auto; 
   transition: var(--transition);
   object-fit: cover;
-  flex-basis: 50%;
-  border-radius: 20px;
+
 }
 
 .about-us__img:hover img{
   transform: scale(1.2);
-  border-radius: 20px;
-
 }
 
 .about-us__text{
@@ -805,6 +1018,7 @@ height:100%;
   flex-shrink: 0;
   flex-grow: 1;
   text-align: left;
+  /* border: 2px solid red; */
   /* justify-content: space-around; */
 }
 
@@ -832,18 +1046,18 @@ height:100%;
   margin-bottom: 2rem;
 }
 
-/* .about-us__btn{
-  width:100%;
-  margin-bottom:50px;
-  display: flex;
-} */
+.about-us__btn{
+  /* width:100%; */
+  margin-bottom:30px;
+  /* background-color: red; */
+}
 /* ============== media quierie ========== */
 
 @media screen and (max-width:767px){
   .about-us .container{
     display: flex;
     flex-direction: column-reverse;
-    background-color: pink;
+    /* background-color: pink; */
   }
 
   .about-us__text{
@@ -868,94 +1082,286 @@ height:100%;
   .about-us__description{
     max-width: 100%;
   }
-
-  .about-us__img img{
-    flex-basis: 100%;   
+  .about-us__btn {
+    width:100%;
+    margin-bottom:30px;
+    background-color: red;
   }
+ 
 
 }
 
 
-/* ======================== BEST SELLER ===================== */
-
-.best-seller .container{
-  background-color: #EB4928;
-  padding:1.5rem;
-  margin-top: 2rem;
+/* ============== TESTIMONIALS ============== */
+.testimonials{
+/* border:2px blue solid; */
+margin-top: 2.5rem;
+/* background: #26c653; */
+/* padding: 5rem 0rem 20rem; */
+padding-bottom: 15rem;
+display: flex;
 }
 
-
-.best-seller .heading{
-  text-align: left;
-  /* margin-top:2rem; */
-  /* border: 2px green solid; */
-  /* margin:2rem 0rem 2rem 0rem; */
-  /* padding-top: 1rem; */
-  margin-bottom: 1rem;;
-}
-
-.best-seller__icons{
+.testimonial__wrapper{
   display: flex;
-  justify-content: end;
-  flex: row;
-  gap:20px;
+  gap:2rem;
+  margin-top:3rem;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
 }
 
-.best-seller__icons i[class^="fa"]{
-  font-size: 1.7rem;
-  /* position: fixed; */
+.testimonial__box{
+  /* border: 2px solid green; */
+  display: flex;
+  flex-direction: column;
+  padding:1.4rem;
+  text-align: left;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+  /* background-color: pink; */
+ 
+
 }
 
-.best-seller__images{
+.company-star-rating{
+  transition: var(--transition);
+ cursor: pointer;
+}
+
+.company-star-rating > *{
+color:orange;
+}
+
+.reviewer__box{
   display: flex;
   flex-direction: row;
-  gap:0.8rem;
-  text-align: left;
+  gap: 1rem;
+  align-items: center;
+}
+
+.reviewer-name{
+  text-transform:capitalize;
+  font-weight: var(--font-weight-bold);
+}
+
+.fa-square-check{
+ color:var(--verified-check);
+}
+
+@media screen and (max-width:934px) {
+  .testimonial__wrapper{
+    grid-template-columns: repeat(2,1fr);
+  }
   
 }
 
-.seller__img {
- min-width:250px;
- min-height: 250px;
- border-radius: 20px;
+
+@media screen and (max-width:560px) {
+  .testimonial__wrapper{
+    grid-template-columns: repeat(1,1fr);
+  }
+  
+}
+/* ========================== Testimonials ====================== */
+/* top of footer */
+
+.footer{
+  padding-top:0;
+}
+
+.footer .container{
+  display: grid;
+  grid-template-areas:
+   "newsletter" 
+   "content";
+}
+
+.newsletter{
+  /* assigned the grid item of newsletter */
+  grid-area: newsletter;
+  display: grid;
+  grid-template-areas: "newsletter-text newsletter-form";
+  grid-template-columns: 60% 40%;
+  /* news- text 60 percent of grid and form 40% */
+  border-radius: 20px;
+  background-color: var(--accent);
+  align-items: center;
+  padding:1.7rem;
+  position: relative;
+  top: 0;
+  transform: translateY(-40%);
+  color: white;
+  box-shadow: var(--shadow);
+  font-size: clamp(0.4rem,0.7rem, 1rem);
+
+}
+
+.newsletter__text{
+  display: flex;
+  flex-direction: column;
+  /* background-color: #26c653; */
+  gap:0.4rem;
+  letter-spacing: 0.06rem;
+}
+
+.newsletter-message{
+  font-size: 1rem;
+}
+
+.newsletter__form{
+  font-family: var(--font-family);
+  text-transform: uppercase;
+  /* font-size: clamp(1rem, 2rem, 2.3rem); */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width:auto;
+}
+
+.newsletter__form input[type="email"]{
+  width:100%;
+  padding:0.6rem;
+  margin-right: 0.4rem;
+  border: none;
+  border-radius: 20px;
+  font-size: clamp(0.4rem,0.9rem, 1rem);
+}
+
+.newsletter__form input[type="email"]:focus{
+ outline: 2px solid var(--main);
+}
+
+.newsletter__form input[type="placeholder"]{
+  color: black;
+  text-indent: none;
+ }
+ 
+ .newsletter__form input::placeholder {
+  border-radius: 50px;
+  padding:20px;
+  /* background-color: red; */
+  font-family: var(--font-family);
+  /* Other styles you want to apply */
+}
+
+/* newsletter ends here  */
+
+/*================= footer content  */
+.footer-content{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  border:2px solid green;
+  width: 100%;
+  font-size: clamp(0.5rem, 1rem, 1.2rem);
+  gap:1rem;
+
+}
+/* ================COLUMN 1 OF FOOTER =========== */
+.col-1{
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  gap:1.2rem;
+  
 }
 
 
 
-/* <section class="best-seller">
-    <div class="container">
-        <h2 class="heading">
-            Best Sellers
-        </h2>
-         <div class="best-seller__icons">
-            <i class="fa-solid fa-circle-arrow-left"></i>
-            <i class="fa-solid fa-circle-arrow-right"></i>
+
+.footer-nav a{
+  text-decoration: none;
+  color: black;
+  line-height: 2.5; 
+  text-transform: capitalize;
+  font-family: var(--font-weight-regular);
+}
+
+.footer-logo{
+  text-transform: capitalize;
+  font-size:medium;
+  font-weight: var(--font-weight-light);
+  font-size:1.3rem;
+  text-decoration: none;
+  color: black;
+
+}
+ .socials-cta{
+  font-size: 1.1rem;
+  font-weight: var(--font-weight-regular);
+
+ }
+
+ .socials-cta span{
+  color: orange;
+  font-family: var(--font-weight-extrabold);
+  margin-left: 3px;
+  cursor: pointer;
+
+ }
+/* .footer-content:hover{
+ color: var(--accent);
+ font-family: var(--font-weight-medium);
+ transition: 4s ease-in-out;
+ cursor: pointer;
+} */
+
+.footer-icons{
+  /* background-color: #EB4928; */
+  display: flex;
+  font-size: 1.5rem;
+  gap:2rem;
+  /* padding:0.3rem; */
+}
+
+.footer-icons a{
+  color: black;
+}
 
 
-         </div>
-        <div class="best-seller__images">
-            <img src="../img/product2.png" alt="" class="product__img">
-            <img src="../img/product4.png" alt="" class="product__img">
-            <img src="../img/product7.png" alt="" class="product__img">
-            <img src="../img/product7.png" alt="" class="product__img">
-            <img src="../img/product2.png" alt="" class="product__img">
-        </div>
-    </div>
-</section>
- */
+.socials__bg {
+  background-color: orange;
+  border-radius: 50%;
+  padding:0.7rem 1rem;
+  color:black;
+  transition: var(--transition);
+}
+
+/* ============== footer-nav ============ */
+
+.footer-nav{
+  border: 2px solid red;
+ 
+}
+.footer-nav li{
+  color:black;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+#footer__links-title {
+  font-weight: var(--font-weight-bold);
+  background-color: #fff;
+}
+
+.footer__img{
+  width: 60px;
+  height: 100px;
+}
+
+
+/* ================ copyright========== */
+.copyright{
+  text-align: center;
+  /* background-color:red; */
+  padding:1rem;
+  margin-top: 1rem;
+  font-size: clamp(1rem , 0.9rem, 1.2rem);
+  font-weight: var(--font-weight-light);
+}
+
+.copyright a{
+  text-decoration: none;
+}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/* ============= About-us section ===================== */
