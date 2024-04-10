@@ -213,7 +213,7 @@ header{
 }
 
 .header-cta__bag i[class^="fa"]{
-    color:#EB4928;
+    color:var(--accent);
     background-color: white;
     font-size: 1.6rem;
     border-radius: 50%;
@@ -445,7 +445,7 @@ header{
 
  .btn:hover{
     background-color: white;
-    color:orange;
+    color:var(--main);
     cursor: pointer;
     transition: var(--transition);
     transform: translateY(2px);
@@ -467,7 +467,7 @@ header{
 
   .hero-bottom i[class^="fa"]{
     font-size: 2.5rem;
-    color:#EB4928;
+    color:var(--accent);
     font-weight: var(--font-weight-extrabold);
     /* margin-right:10px; */
 
@@ -477,9 +477,9 @@ header{
 
   .hero-images{
     grid-area: "image";
-    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: repeat(2, 1fr);
     box-sizing: border-box;
-    /* border: 2px black solid; */
+    border: 2px black solid;
     display:grid;
     grid-gap: 0.9rem 1.7rem;
     /* HOW DO I TARGET THE ROW AP IN THE FIRST COLUMN ONLY ????? */
@@ -497,38 +497,38 @@ header{
   
 }
 
-  
-  .img-color{
-    /* width:100%;
-    height:100%; */
+  /* .img-color{
+    width:100%;
+    height:auto;  
     border-radius:30px;
     padding: 0.4rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Example box shadow */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
 
-  }
+  } */
 
-  .img-color__bg{
+  /* .img-color__bg{
     border-radius:30px;
     padding: 0.4rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Example box shadow */
-  }
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+  } */
 
-  .img-color:nth-child(1){
-    background-color: pink;
+  /* .img-color:nth-child(1){
+    background:10px pink solid;
 
   }
 
   .img-color:nth-child(2){
-    background-color: orange;
+    border:10px  var(--verified-check) solid;
   }
 
   .img-color:nth-child(3){
-    background-color: lightblue;
+    border:10px #a0d8ef solid;
   }
 
   .img-color:nth-child(4){
-    background-color: plum;
-  } */
+    
+    border:10px yellow solid;
+  }  */
 
 
    
@@ -683,7 +683,7 @@ header{
 
 
 .jewelry{
-  /* background-color: red; */
+  /* background-color: yellow; */
 }
 
 /* component */
@@ -900,7 +900,7 @@ header{
 .a11y-slider-dots li button {
   display: block;
   font-size: 0;
-  border: orange solid 1px;
+  border: var(--accent) solid 1px;
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -1167,6 +1167,7 @@ color:orange;
 
 .footer{
   padding-top:0;
+  /* background-color:lightblue; */
 }
 
 .footer .container{
