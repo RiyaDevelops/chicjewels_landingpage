@@ -5,6 +5,8 @@
 /* color scheme */
 --white:#ffffff;
 --black:black;
+--pastel-blue:#a0d8ef;
+--lemon-yellow:#FFF44F;
 /* --accent: #EB4928; */
 /* --main:orange; */
 --main:#fbacd4;
@@ -29,6 +31,9 @@
 --transition: 0.3s ease-in-out;
 --shadow:0px 4px 6px rgba(0, 0, 0, 0.1); /* Example box shadow */
 --main-margin:2.5rem;
+/* hero section box shadow */
+--shadow-two: 0px 4px 6px rgba(0, 0, 0, 0.1);  
+
 
 }
 
@@ -71,6 +76,11 @@ body{
   transition: ease-in-out 0.3s;
   position: sticky; /*  stick to a specific position on the viewport when scrolling */
   width:100%;
+  text-transform: uppercase;
+  z-index: 101;
+  /* higher then the header */
+  position: sticky;
+
 }
 
 
@@ -147,7 +157,7 @@ header{
 
 .nav__link:hover{
     color:var(--accent);
-    font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-bold);
 }
 .nav__link:last-child{
     margin-right: 0;
@@ -259,7 +269,7 @@ header{
     padding:0.1rem;
 }
 
-/* ==================================== Media Queries ================================= */
+/* ==================================== Media Queries: NAVBAR ================================= */
 
 /* first breaking point */
 @media screen and (max-width: 1127px) {
@@ -276,7 +286,6 @@ header{
     
 }
 
-
 @media screen and (max-width: 996px) {
     .menu{
         display:block;
@@ -285,7 +294,7 @@ header{
     .navbar{
         position: absolute;
         top:100px;
-        width:100%;
+        width:75%;
         /* occupying viewport minus header height */
         /* 100% of the viewport height (100vh) minus 100 pixels (100px).  */
         /* fill the entire viewport height but leave some space at the bottom. */
@@ -361,38 +370,53 @@ header{
     .nav__link:nth-child(2){
       background-image: url(../../img/product2.png);
       background-size: cover;
-      background-position: center; /* Center the background image */
-      align-items: right;
+      background-position: 100% 0%; /* Center the background image */
+      align-items: center;
     }
 
     .nav__link:nth-child(3){
-      background-image: url(../../img/product3.png);
+      /* background-image: url(../../img/product3.png); */
       background-size: cover;
       background-position: center; /* Center the background image */
       align-items: right;
     }
 
     .nav__link:nth-child(4){
-      background-image: url(../../img/product__necklace--gold.png);
+      /* background-image: url(../../img/product__necklace--gold.png); */
       background-size: cover;
       background-position: center; /* Center the background image */
       align-items: right;
     }
    
     .nav__link:nth-child(4){
-      background-image: url(../../img/about-us-image.jpeg);
+      /* background-image: url(../../img/about-us-image.jpeg); */
       background-size: cover;
       background-position: center; /* Center the background image */
       align-items: right;
     }
 
     .nav__link:nth-child(5){
-      background-image: url(../../img/product--ring.png);
+      /* background-image: url(../../img/product--ring.png); */
       background-size: cover;
       background-position: center; /* Center the background image */
       align-items: right;
     }
 }
+
+@media screen and (max-width: 375px) {
+  .logo__img{
+    width:25px;
+    height:25px;
+  }
+  .logo{
+    padding:0rem;
+}
+}
+
+
+/* ==================================== Media Queries: NAVBAR ================================= */
+
+
 
 /* ===================== HERO SECTION =========================== */
 
@@ -440,9 +464,9 @@ header{
     text-align: left;
     max-width: 90%;
   }
-/* .hero-images{
-  width:100%;
-} */
+
+  /* ======= Buttons ========= */
+
   .hero-cta__btns{
     width:100%;
     margin-bottom:50px;
@@ -473,6 +497,8 @@ header{
     transition: var(--transition);
     transform: translateY(2px);
  }
+  
+ /* ======= Buttons ========= */
 
   .hero-bottom{
     display:flex;
@@ -496,47 +522,53 @@ header{
 
   }
 
-/* right side of hero  */
+/* ===============  RIGHT SIDE OF HERO ==============  */
 
   .hero-images{
     grid-area: "image";
     grid-template-columns: repeat(2, 1fr);
     box-sizing: border-box;
-    border: 2px black solid;
+    /* border: 2px green solid; */
     display:grid;
-    grid-gap: 0.9rem 1.7rem;
+    /* grid-gap: vertical gap horizontal gap */
+    grid-gap: 1.3rem 1rem;
     /* HOW DO I TARGET THE ROW AP IN THE FIRST COLUMN ONLY ????? */
     padding: 0.6rem;
-    align-items: start;
-    
+    /* justify-items:center; */
+    /* assign height to grid items (children) */
+    /* maxheight */
+    /* max-height:10;   */
+    background-size: cover; /* Cover the entire container with the background image, preserving its aspect ratio */
+   
   }
 
 .hero-images img {
   object-fit: cover; /* Maintain aspect ratio */
   border-radius:20px;
-  max-width: 100%;
-  max-height: 100%;
+  /* height: 100%; */
+  height:auto;
   align-items: center;
+  background-size: cover; /* Cover the entire container with the background image, preserving its aspect ratio */
+
   
 }
+
+/* #fourth-img{
+  height:90%;
+} */
+
+/* ============ media querie ========= */
 
   .img-color{
     width:100%;
     height:auto;  
     border-radius:20px;
     padding: 0.4rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
-
   }
 
-  /* .img-color__bg{
-    border-radius:30px;
-    padding: 0.4rem;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
-  } */
 
  .img-color:nth-child(1){
-    border:10px pink solid;
+    border:10px var(--main) solid;
  
   } 
 
@@ -545,17 +577,17 @@ header{
   }
 
   .img-color:nth-child(3){
-    border:10px #a0d8ef solid;
+    border:10px var(--pastel-blue) solid;
   }
 
   .img-color:nth-child(4){
     
-    border:10px yellow solid;
-  }  */
+    border:10px var(--lemon-yellow) solid;
+  }  
 
 
    
-  /* ===================== Media Queries ================= */
+  /* ===================== Media Queries : HERO SECTION ================= */
 
   @media screen and (max-width:1042px) {
     
@@ -578,22 +610,13 @@ header{
 
      .hero-bottom__message{
       width:100%;
-      border: 2px red solid;
+      /* border: 2px red solid; */
      }
 
-     .hero-images{
-      grid-area: "image";
-      box-sizing: border-box;
-      border: 2px green solid;
-      display:grid;
-      grid-gap: 0.9rem 1.7rem;
-      /* HOW DO I TARGET THE ROW AP IN THE FIRST COLUMN ONLY ????? */
-      grid-template-columns: repeat(1, 1fr);
-      padding: 0.6rem;
-      align-items: start;
-      
+    
     }
-  }
+
+  
   
   
   @media screen and (max-width:949px){
@@ -696,12 +719,13 @@ header{
   }
   
 
-/* ======================== GOLD JEWELRY and SILVER JEWELRY  ================ */
+/* ==================================================== GOLD JEWELRY and SILVER JEWELRY  ===================================== */
 
 
 .promo-img{
   width:100%;
   margin-top: 3rem;
+  /* border: 2px pink solid; */
 }
 
 
@@ -811,9 +835,9 @@ header{
 
 } */
 .product-price a:hover{
-  color: var(--accent);
+  color: var(--main);
   transition: var(--transition);
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-);
 
 }
 
@@ -838,7 +862,7 @@ header{
 /* ======================== BEST SELLER ===================== */
 
 .best-seller{
-  /* background-color: red; */
+  /* background-color:var(--pastel-blue); */
   margin-top: 2rem;
 }
 .best-seller .container{
@@ -993,6 +1017,7 @@ header{
   /* background-color: orange; */
   opacity: 0.9;
   /* background: #EB4928; */
+  /* padding-top: 2rem; */
 }
 
 .about-us .container {
@@ -1004,7 +1029,7 @@ header{
 }
 
 .about-us__img{
-  /* border: 2px solid red; */
+  border: 2px solid red;
   overflow: hidden; /* Ensure the image doesn't overflow the container */
   /* border-radius: 20px; */
   justify-content: center; 
@@ -1013,7 +1038,7 @@ header{
 }
 
 .about-us__img img{
-  width: 550px; 
+  width: 500px; 
   /* won't grow or shrink beyond that initial size. */
   flex: 0 0 auto; 
   transition: var(--transition);
@@ -1110,7 +1135,7 @@ header{
 .testimonials{
 /* border:2px blue solid; */
 margin-top: 2.5rem;
-/* background: #26c653; */
+/* background: lightpink; */
 /* padding: 5rem 0rem 20rem; */
 padding-bottom: 15rem;
 display: flex;
@@ -1125,13 +1150,13 @@ display: flex;
 }
 
 .testimonial__box{
-  /* border: 2px solid green; */
+  border: 2px solid green;
   display: flex;
   flex-direction: column;
   padding:1.4rem;
   text-align: left;
   gap: 1rem;
-  box-shadow: var(--shadow);
+  /* box-shadow: var(--shadow); */
   /* background-color: pink; */
  
 
@@ -1195,9 +1220,9 @@ color:var(--stars);
   /* assigned the grid item of newsletter */
   grid-area: newsletter;
   display: grid;
-  grid-template-areas: "newsletter-text newsletter-form";
-  grid-template-columns: 60% 40%;
-  /* news- text 60 percent of grid and form 40% */
+  grid-template-areas: 
+    "newsletter-text newsletter-form"; 
+    grid-template-columns: 60% 40%;
   border-radius: 20px;
   background-color: var(--accent);
   align-items: center;
@@ -1207,10 +1232,12 @@ color:var(--stars);
   transform: translateY(-40%);
   color: white;
   box-shadow: var(--shadow);
-  font-size: clamp(0.4rem,0.7rem, 1rem);
-
+  font-size: clamp(0.4rem,0.8rem, 1rem);
 }
 
+.newsletter__heading{
+  font-size: 2.8rem;
+}
 .newsletter__text{
   display: flex;
   flex-direction: column;
@@ -1259,29 +1286,155 @@ color:var(--stars);
   /* Other styles you want to apply */
 }
 
+
+
+@media screen and (max-width:1036px) {
+
+
+.newsletter{
+ /* background-color: red; */
+ grid-template-columns: 50% 50%;
+
+} 
+.newsletter__form{
+  margin-top: 20px;
+}
+}
+
+@media screen and (max-width:887px) {
+
+.newsletter{
+ /* background-color: red; */
+ grid-template-columns: 50% 50%;
+
+}
+
+.footer-content{
+  /* border: 3px solid red; */
+}
+.newsletter__text{
+ font-size: 0.4rem;
+}
+}
+
+
+@media screen and (max-width:767px) {
+
+
+.newsletter{
+ grid-template-columns: 100%;
+ grid-template-areas: 
+ "newsletter-text"
+  "newsletter-form"; 
+}
+
+}
+
+
+
+@media screen and (max-width:681px) {
+ 
+
+.newsletter{
+ /* background-color: red; */
+ grid-template-columns: 100%;
+ grid-template-areas: 
+ "newsletter-text"
+  "newsletter-form"; 
+}
+
+
+}
+
+
 /* newsletter ends here  */
 
 /*================= footer content  */
 .footer-content{
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr repeat(4,1fr);
   /* border:2px solid green; */
-  width: 100%;
+  /* width: 100%; */
   font-size: clamp(0.5rem, 1rem, 1.2rem);
   /* gap:8rem; */
   font-weight: var(--font-weight-regular);
-
 }
+
+
+
 /* ================COLUMN 1 OF FOOTER =========== */
 .col-1{
-  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
-  /* gap: 1.5rem; */
   line-height: 2.5; 
-  font-size: 1.2rem;
+  /* font-size: clamp(0.5rem, 0.9rem , 1rem); */
 
 }
+
+.footer__motto{
+  text-transform: uppercase;
+
+}
+
+
+.col-1 .footer-icons{
+  width: 80%;
+  display: flex;
+  font-size: 1.9rem;
+  transition: var(--transition);
+  gap:1rem;
+  padding-bottom:1rem;
+
+}
+
+/* ========= media queries ==============  */
+@media screen and (max-width:860px) {
+  .footer-content{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Two columns, evenly spaced */
+    /* background-color: #a0d8ef; */
+   justify-content: center;
+   align-items: center;
+   gap:1.8rem;
+   /* margin-inline: 2rem;  */
+
+  }
+  .col-1{
+    order: 5;
+    min-width: 100%;
+    /* border:2px red solid; */
+    /* align-items: center; */
+    margin-top: 1.5rem;
+    white-space: nowrap;
+    text-align: left;
+  }
+}
+
+@media screen  and (max-width:500px){
+
+  .newsletter__form input::placeholder {
+    padding:0px;
+   
+  }
+  
+}
+
+@media screen  and (max-width:390px){
+  .footer__links{
+    white-space: nowrap;
+  }
+  
+  
+}
+
+/* ======= media queries ================= */
+ 
+  .col-1 .footer__motto,
+  .col-1 .socials-cta,
+  .col-1 .footer-icons,
+  .col-1 .footer__img {
+    text-align: left; /* Align text and icons to the left */
+  }
 
 .footer-nav a{
   text-decoration: none;
@@ -1289,66 +1442,56 @@ color:var(--stars);
   line-height: 2.5; 
   text-transform: capitalize;
 }
-/* 
-.footer-logo{
-  text-transform: capitalize;
-  font-size:medium;
-  font-weight: var(--font-weight-regular);
-  font-size:1.3rem;
-  text-decoration: none;
-  color: black;
-
-} */
- .socials-cta{
-  /* font-size: 1.2rem; */
-
- }
 
  .socials-cta span{
   color: var(--main);
-  font-family: var(--font-weight-extrabold);
   margin-left: 3px;
   cursor: pointer;
-
+  font-weight: var(--font-weight-semibold);
+  transition: var(--transition);
  }
-/* .footer-content:hover{
- color: var(--accent);
- font-family: var(--font-weight-medium);
- transition: 4s ease-in-out;
- cursor: pointer;
-} */
 
-.footer-icons{
-  /* background-color: #EB4928; */
-  display: flex;
-  font-size: 1.6rem;
-  /* gap:2rem; */
-}
+ .socials-cta span:hover{
+   font-weight: var(--font-weight-bold);
+ }
 
-.footer-icons a{
+
+.footer-icons i[class^="fa"]{
+  transition: var(--transition);
   color: black;
 }
 
 
+.footer-icons i[class^="fa"]:hover{
+  transform: translateY(3px);
+   
+}
 .socials__bg {
-  /* background-color: var(--main); */
-  border-radius: 40%;
-  padding:0.7rem 1rem;
   color:black;
+  width:50px;
+  height:50px;
   transition: var(--transition);
 }
 
 /* ============== footer-nav ============ */
 
 .footer-nav{
-  border: 2px solid red;
- 
-}
-.footer-nav li{
-  color:black;
   text-decoration: none;
   list-style-type: none;
+ 
 }
+.footer__links li{
+  color:black;
+  transition:  var(--transition);
+  text-decoration: none;
+}
+
+
+.footer__links:hover{
+  color: var(--accent);
+  font-weight: var(--font-weight-bold);
+}
+
 
 #footer__links-title {
   font-weight: var(--font-weight-bold);
@@ -1357,8 +1500,19 @@ color:var(--stars);
 
 }
 
-.footer__links i [class^='fa'] {
+.col-5  i[class^="fa"] {
   color: var(--main);
+  transition: var(--transition);
+  /* background-color: red; */
+  margin-right:3px;
+
+}
+
+.col-5  a:hover i[class^="fa"] {
+  /* color: var(--accent); */
+  /* background-color: red; */
+  transform: translateY(3px) ;
+  
 }
 
 .footer__img{
@@ -1375,6 +1529,7 @@ color:var(--stars);
   width:90px;
   height: 90px;
 }
+
 /* ================ copyright========== */
 .copyright{
   text-align: center;
@@ -1383,11 +1538,20 @@ color:var(--stars);
   margin-top: 1rem;
   font-size: clamp(1rem , 0.9rem, 1.2rem);
   font-weight: var(--font-weight-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .copyright a{
   text-decoration: none;
 }
 
+#education__statement{
+  font-size:0.3rem;
+  text-transform: uppercase;
+  margin-left: 10px;;
+  
+}
 
 

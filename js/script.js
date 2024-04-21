@@ -9,7 +9,7 @@ hamburger.addEventListener('click', () => {
 });
 
 
- // slider Begins here 
+ // Slider Begins here 
  const slider = new A11YSlider(document.querySelector('.slider'), {
     adaptiveHeight: true,
     dots: true,
@@ -27,7 +27,13 @@ hamburger.addEventListener('click', () => {
        
     }
 
+
     });
+
+
+  
+
+//  ONLY ACCEPTS OND ID AS ITS ARGUemenNT ??
 
    
    
