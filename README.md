@@ -19,3 +19,8 @@
                  <!-- <div class="img-color">
             <!-- <img src="img/product7-removebg-preview.png" alt="hero section image"> -->
          </div>  -->
+
+
+# Resources 
+# blob maker 
+# https://9elements.github.io/fancy-border-radius/#9.85.93.7--. 

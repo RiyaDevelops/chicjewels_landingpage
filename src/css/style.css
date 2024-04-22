@@ -33,6 +33,12 @@
 --main-margin:2.5rem;
 /* hero section box shadow */
 --shadow-two: 0px 4px 6px rgba(0, 0, 0, 0.1);  
+/* border radius  */
+--border:55% 45% 64% 36% / 28% 53% 47% 72% ; 
+
+--margin-t:6rem;
+
+
 
 
 }
@@ -79,8 +85,7 @@ body{
   text-transform: uppercase;
   z-index: 101;
   /* higher then the header */
-  position: sticky;
-
+  position: fixed;
 }
 
 
@@ -423,7 +428,9 @@ header{
   .hero{
     /* background-color: lightpink; */
     /* text-align: center; */
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    margin-top: var(--margin-t);
+  
   }
 
   .hero .container{
@@ -446,7 +453,7 @@ header{
     color:black;
     font-size: clamp(3.5rem, 4.2rem, 4.4rem);
     text-transform: capitalize;
-    font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-regular);
     /* border: 2px black solid; */
     margin-bottom: 16px;
     /* text-wrap:nowrap */
@@ -526,7 +533,7 @@ header{
 
   .hero-images{
     grid-area: "image";
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(0, 1fr);
     box-sizing: border-box;
     /* border: 2px green solid; */
     display:grid;
@@ -534,24 +541,21 @@ header{
     grid-gap: 1.3rem 1rem;
     /* HOW DO I TARGET THE ROW AP IN THE FIRST COLUMN ONLY ????? */
     padding: 0.6rem;
-    /* justify-items:center; */
-    /* assign height to grid items (children) */
-    /* maxheight */
-    /* max-height:10;   */
-    background-size: cover; /* Cover the entire container with the background image, preserving its aspect ratio */
-   
+     width: 100%;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden;
   }
 
 .hero-images img {
+  width: 100%;
+  height: 100%;
   object-fit: cover; /* Maintain aspect ratio */
-  border-radius:20px;
-  /* height: 100%; */
-  height:auto;
   align-items: center;
   background-size: cover; /* Cover the entire container with the background image, preserving its aspect ratio */
-
-  
+  /* border-radius:85% 15% 93% 7% / 9% 93% 7% 91% ; */
 }
+
 
 /* #fourth-img{
   height:90%;
@@ -561,16 +565,28 @@ header{
 
   .img-color{
     width:100%;
-    height:auto;  
-    border-radius:20px;
-    padding: 0.4rem;
+    height:auto;    
+    /* border-radius:55% 45% 64% 36% / 28% 53% 47% 72% ; */
+    /* background-color: var(--main); */
+    border-radius:var(--border);
+
   }
 
 
  .img-color:nth-child(1){
-    border:10px var(--main) solid;
- 
+    background-color: var(--main);
+    opacity: 0.9;
+    border:10px var(--accent) solid;
+    /* padding: 0.3rem; */
   } 
+
+
+ /* .img-color--two{
+ 
+  border:10px orange solid;
+  border-radius:var(--border);
+
+}  */
 
   .img-color:nth-child(2){
     border:10px  var(--verified-check) solid;
@@ -594,6 +610,8 @@ header{
     .hero .container{
         margin-top: 20px;
     }
+
+
 
     .hero-text{
       border: 2px solid green;
@@ -722,15 +740,16 @@ header{
 /* ==================================================== GOLD JEWELRY and SILVER JEWELRY  ===================================== */
 
 
-.promo-img{
+/* .promo-img{
   width:100%;
   margin-top: 3rem;
-  /* border: 2px pink solid; */
-}
+  border: 2px pink solid;
+} */
 
 
 .jewelry{
   /* background-color: yellow; */
+  margin-top: var(--margin-t);
 }
 
 /* component */
@@ -863,7 +882,7 @@ header{
 
 .best-seller{
   /* background-color:var(--pastel-blue); */
-  margin-top: 2rem;
+  margin-top: var(--margin-t);
 }
 .best-seller .container{
   /* padding:1.5rem; */
@@ -1012,7 +1031,7 @@ header{
 
 .about-us{
   /* border: 2px solid red; */
-  margin-top: 4rem;
+  margin-top: var(--margin-t);
   /* padding:1rem; */
   /* background-color: orange; */
   opacity: 0.9;
@@ -1029,18 +1048,21 @@ header{
 }
 
 .about-us__img{
-  border: 2px solid red;
   overflow: hidden; /* Ensure the image doesn't overflow the container */
-  /* border-radius: 20px; */
   justify-content: center; 
   display: flex;
   margin-bottom: 1rem;
+  border:10px var(--accent) solid;
+  border-radius:55% 45% 64% 36% / 28% 53% 47% 72% ; 
+  opacity: 0.9;
+  width:100%;
+  max-width: 100%;
 }
 
 .about-us__img img{
-  width: 500px; 
+  width:100%;
   /* won't grow or shrink beyond that initial size. */
-  flex: 0 0 auto; 
+  /* flex: 0 0 auto;  */
   transition: var(--transition);
   object-fit: cover;
 
@@ -1134,7 +1156,7 @@ header{
 /* ============== TESTIMONIALS ============== */
 .testimonials{
 /* border:2px blue solid; */
-margin-top: 2.5rem;
+margin-top: var(--margin-t);
 /* background: lightpink; */
 /* padding: 5rem 0rem 20rem; */
 padding-bottom: 15rem;
@@ -1201,8 +1223,8 @@ color:var(--stars);
   }
   
 }
-/* ========================== Testimonials ====================== */
-/* ==========================================================top of footer =============================================*/
+/* ========================== END OF Testimonials ======================================= */
+/* ========================================================== FOOTER  =============================================*/
 
 .footer{
   padding-top:0;
@@ -1411,10 +1433,21 @@ color:var(--stars);
 }
 
 @media screen  and (max-width:500px){
+  .footer-content{
+    grid-template-columns:  minmax(0, 1fr); /* Two columns, evenly spaced */
+   border: 3px red solid;
+   /* padding:0.7rem; */
+   font-size:0.8rem;
 
+  }
+  
   .newsletter__form input::placeholder {
     padding:0px;
    
+  }
+
+  .newsletter .btn{
+    /* font-size: clm 0.5rem; */
   }
   
 }
@@ -1536,7 +1569,7 @@ color:var(--stars);
   /* background-color:red; */
   padding:1rem;
   margin-top: 1rem;
-  font-size: clamp(1rem , 0.9rem, 1.2rem);
+  font-size: clamp(0.5rem , 0.9rem, 1rem);
   font-weight: var(--font-weight-light);
   display: flex;
   align-items: center;
