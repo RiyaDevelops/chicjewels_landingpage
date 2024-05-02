@@ -3,5 +3,6 @@
         "btns",
         "extralight",
         "Pinterest"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }
